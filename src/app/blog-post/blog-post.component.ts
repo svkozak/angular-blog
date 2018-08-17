@@ -10,6 +10,7 @@ import { HttpClient } from '@angular/common/http';
 export class BlogPostComponent implements OnInit {
 
   authors: object;
+  alert = false;
 
   constructor(private http: HttpClient, private api: ApiService ) { 
   }
@@ -22,6 +23,11 @@ export class BlogPostComponent implements OnInit {
 
   onSubmit(postForm) {
     this.api.post(postForm)
+    this.alert = true;
+  }
+
+  hideAlert(){
+      this.alert = false
   }
 
 }

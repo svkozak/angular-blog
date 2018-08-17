@@ -24,3 +24,11 @@
   <button type="submit" class="btn btn-outline-primary">Done</button>
 
   </form>
+
+  <!-- alert to be shown after posting -->
+  <div class="alert mt-5 alert-success alert-dismissible" role="alert" *ngIf="alert">
+    <strong>Success!</strong> Artile posted.
+    <button type="button" class="close" (click)="hideAlert()" data-dismiss="alert" aria-label="Close">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>

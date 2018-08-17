@@ -3,24 +3,24 @@
 <form #postForm="ngForm" (ngSubmit)="onSubmit(postForm.value)" > 
 <!-- Select blog author -->
 <div class="form-group">
-    <label for="authorSelect">Post author</label>
+    <label for="authorSelect">Author</label>
     <select name="author" class="form-control" id="authorSelect" ngModel>
       <option *ngFor="let author of authors"> {{ author.name }}</option>
     </select>
   </div>
   <!-- Post title -->
   <div class="form-group">
-      <label for="postTitle">Post title</label>
+      <label for="postTitle">Title</label>
       <input name="title" class="form-control" id="postTitle" type="text" placeholder="Post title" ngModel>
   </div>
 
 
   <!-- Text area -->
   <div class="form-group">
-      <label for="bodyTextArea">Post body</label>
+      <label for="bodyTextArea">Body</label>
       <textarea name="body" class="form-control" id="bodyTextArea" rows="3" ngModel></textarea>
     </div>
 
-  <button type="submit" class="btn btn-primary">Done</button>
+  <button type="submit" class="btn btn-outline-primary">Done</button>
 
   </form>

@@ -1,6 +1,9 @@
+import { ApiService } from './../api.service';
+import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-
 import { BlogPostComponent } from './blog-post.component';
+
 
 describe('BlogPostComponent', () => {
   let component: BlogPostComponent;
@@ -8,7 +11,9 @@ describe('BlogPostComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ BlogPostComponent ]
+      declarations: [ BlogPostComponent ],
+      imports: [ FormsModule, HttpClientModule ],
+      providers: [ ApiService ]
     })
     .compileComponents();
   }));

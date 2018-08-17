@@ -1,3 +1,4 @@
+import { ApiService } from './../api.service';
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
@@ -10,19 +11,17 @@ export class BlogPostComponent implements OnInit {
 
   authors: object;
 
-  constructor(private http: HttpClient ) { 
+  constructor(private http: HttpClient, private api: ApiService ) { 
   }
 
   ngOnInit(): void {
-    this.http.get<Object>("https://jsonplaceholder.typicode.com/users").subscribe(data => {
-      this.authors = data;
+    this.api.getAuthors().subscribe(data => {
+      this.authors = data
     })
   }
 
   onSubmit(postForm) {
-    this.http.post("https://jsonplaceholder.typicode.com/posts", postForm).subscribe(response => {
-      console.log(response);
-    })
+    this.api.post(postForm)
   }
 
 }

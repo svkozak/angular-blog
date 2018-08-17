@@ -1,3 +1,4 @@
+import { ApiService } from './../api.service';
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 
@@ -11,12 +12,12 @@ export class ArticleComponent implements OnInit {
   query: string;
   articles: object;
 
-  constructor(private http: HttpClient) { 
+  constructor(private http: HttpClient, private api: ApiService) { 
     this.query = "";
   }
 
   ngOnInit() {
-    this.http.get("https://jsonplaceholder.typicode.com/posts").subscribe(data => {
+    this.api.getArticles().subscribe(data => {
       this.articles = data;
     })
   }

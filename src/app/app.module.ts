@@ -1,3 +1,4 @@
+import { ApiService } from './api.service';
 import { routing } from './app.routing';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
@@ -24,7 +25,9 @@ import { SearchArticlesPipe } from './search-articles.pipe';
     FormsModule,
     routing
   ],
-  providers: [],
+  providers: [
+    ApiService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

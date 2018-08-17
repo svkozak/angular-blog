@@ -10,22 +10,20 @@
   </div>
   <!-- Post title -->
   <div class="form-group">
-      <label for="postTitle">Title</label>
       <input name="title" class="form-control" id="postTitle" type="text" placeholder="Post title" ngModel>
   </div>
 
 
   <!-- Text area -->
   <div class="form-group">
-      <label for="bodyTextArea">Body</label>
-      <textarea name="body" class="form-control" id="bodyTextArea" rows="3" ngModel></textarea>
+      <textarea name="body" class="form-control" id="bodyTextArea" rows="3" placeholder="Post body" ngModel></textarea>
     </div>
 
   <button type="submit" class="btn btn-outline-primary">Done</button>
 
   </form>
 
-  <!-- alert to be shown after posting -->
+  <!-- alert to be shown/hidden after posting -->
   <div class="alert mt-5 alert-success alert-dismissible" role="alert" *ngIf="alert">
     <strong>Success!</strong> Artile posted.
     <button type="button" class="close" (click)="hideAlert()" data-dismiss="alert" aria-label="Close">

@@ -1,0 +1,20 @@
+
+<h1>Search</h1>
+
+<div class="form-group">
+  <input type="text" class="form-control" id="searchInput" placeholder="Search articles" [(ngModel)]="query">
+</div>
+
+
+<div class="col mt-3" *ngIf="query">
+  <div class="row">
+    <p class="h3">Results: </p>
+  </div>
+
+  <div class="row">
+      <ol>
+          <li *ngFor="let article of (articles | searchArticles: query) | slice:0:10">{{ article.title }}</li>
+        </ol>
+  </div>
+  
+</div>
